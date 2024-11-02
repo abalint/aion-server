@@ -77,6 +77,9 @@ public class AbyssRankDAO {
 				abyssRank.setPersistentState(PersistentState.NEW);
 			}
 		} catch (SQLException e) {
+			abyssRank = new AbyssRank(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, System.currentTimeMillis(), 0, 0, 0, 0);
+			abyssRank.setPersistentState(PersistentState.NEW);
+			insertRank(playerId, abyssRank);
 			log.error("Couldn't load abyss rank for player " + playerId, e);
 		}
 		return abyssRank;

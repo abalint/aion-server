@@ -806,7 +806,7 @@ CREATE TABLE `player_registered_items` (
   `area` enum('NONE','INTERIOR','EXTERIOR','ALL','DECOR') NOT NULL DEFAULT 'NONE',
   `room` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`player_id`,`item_unique_id`,`item_id`),
-  KEY `item_unique_id` (`item_unique_id`),
+  UNIQUE KEY `item_unique_id` (`item_unique_id`),
   CONSTRAINT `player_regitems_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
